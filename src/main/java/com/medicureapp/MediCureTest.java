@@ -52,8 +52,7 @@ public class MediCureTest {
 
 
 	/*
-	//public static void main(String[] args) {
-	  //System.out.println("Test Case Executed Successfully");
+	
 
       @Test
 	  public  void testapp() {
@@ -72,7 +71,6 @@ public class MediCureTest {
 		driver.quit();
 	}
 		
-			
-//} */
+	 */
 
 }
