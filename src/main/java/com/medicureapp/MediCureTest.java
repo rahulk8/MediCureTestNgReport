@@ -50,7 +50,7 @@ public class MediCureTest {
 		        //File destFile = new File ("G:\\chrome-driver\\test-reports\\scr.png"); 
 		        //G:\\chrome-driver\\chromedriver.exe
 		       // File destFile = new File ("//var/lib/jenkins//scr.png");
-			File destFile = new File ("/var/lib/jenkins/workspace/MediCureTestNgScreenshot/test-output/scr.png");
+			File destFile = new File ("//var//lib//jenkins//workspace//MediCureTestNgScreenshot//test-output//scr.png");
 			//File destFile = new File ("/var/lib/jenkins/workspace/health-care-pipeline/scr.png");
 			//var/lib/jenkins/workspace/MediCureTestNgScreenshot
 		         FileUtils.copyFile(screenShot, destFile); 
