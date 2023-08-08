@@ -49,8 +49,8 @@ public class MediCureTest {
 		      // File destFile = new File ("//home/ubuntu//scr.png");
 		        //File destFile = new File ("G:\\chrome-driver\\test-reports\\scr.png"); 
 		        //G:\\chrome-driver\\chromedriver.exe
-		        File destFile = new File ("//var/lib/jenkins//scr.png");
-			//File destFile = new File ("//var//lib//jenkins//workspace//MediCureTestNgScreenshot//test-output//scr.png");
+		       // File destFile = new File ("//var/lib/jenkins//scr.png");
+			File destFile = new File ("//var//lib//jenkins//workspace//MediCureTestNgScreenshot//test-output//scr.png");
 			//var/lib/jenkins/workspace/MediCureTestNgScreenshot
 		         FileUtils.copyFile(screenShot, destFile); 
 			System.out.println("Screenshot taken Successfully");
