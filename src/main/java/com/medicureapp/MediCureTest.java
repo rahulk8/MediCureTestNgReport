@@ -12,7 +12,7 @@ public class MediCureTest {
 
 		    @SuppressWarnings("deprecation")
 	            @Test
-	            public  void testapp() throws Exception {
+	            public static void main(String[] args) throws InterruptedException, IOException {
                     WebDriverManager.chromedriver().setup();
 		   WebDriver driver = new ChromeDriver();
 		   driver.manage().window().maximize();
