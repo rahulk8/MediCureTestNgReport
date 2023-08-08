@@ -46,10 +46,10 @@ public class MediCureTest {
 			//System.out.println("Script Executed Successfully");
 			TakesScreenshot scrShot = ((TakesScreenshot)driver);
 		        File screenShot = scrShot.getScreenshotAs(OutputType.FILE);
-		        File destFile = new File ("//home/ubuntu//scr.png");
+		       // File destFile = new File ("//home/ubuntu//scr.png");
 		        //File destFile = new File ("G:\\chrome-driver\\test-reports\\scr.png"); 
 		        //G:\\chrome-driver\\chromedriver.exe
-		        //File destFile = new File ("//var/lib/jenkins//scr.png");
+		        File destFile = new File ("//var/lib/jenkins//scr.png");
 		         FileUtils.copyFile(screenShot, destFile); 
 			System.out.println("Screenshot taken Successfully");
 		} else 
