@@ -10,44 +10,67 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MediCureTest {
 
-	public static void main(String[] args) throws InterruptedException, IOException {
-		System.setProperty("webdriver.chrome.driver","//home//ubuntu//chromedriver-linux64//chromedriver");
-		ChromeOptions chromeOptions = new ChromeOptions();
-		WebDriver driver = new ChromeDriver(chromeOptions);
-		driver.get("http://13.126.151.156:8082/contact.html");
+		           @SuppressWarnings("deprecation")
+	           @Test
+	            public  void testapp() throws Exception {
+                WebDriverManager.chromedriver().setup();
+		   WebDriver driver = new ChromeDriver();
+		   driver.manage().window().maximize();
+		   //System.setProperty("webdriver.chrome.driver","//home//ubuntu//chromedriver-linux64//chromedriver");
+
+		/*  ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.addArguments("--headless");
+		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-dev-shm-usage"); */
+		  // driver.get("http://13.232.228.60:8082/contact.html");
+		   driver.get("http://localhost:8082/contact.html");
+		  
+		   ////driver.findElement(By.name("q")).sendKeys("rahul",Keys.ENTER);
+		   //System.out.println(driver.getTitle());
+
+		  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//input[@placeholder='Your Name']")).sendKeys("Rahul Kumar");
+	
+		driver.findElement(By.xpath("//input[@placeholder='Phone Number']")).sendKeys("9711739492");
+	
 		
-		WebElement name= driver.findElement(By.xpath("//input[@placeholder='Your Name']"));
-		name.sendKeys("Rahul Kumar");
-		
-		
-		WebElement phone= driver.findElement(By.xpath("//input[@placeholder='Phone Number']"));
-		phone.sendKeys("9711739492");
-		
-		WebElement email= driver.findElement(By.xpath("//input[@placeholder='Email']"));
-		email.sendKeys("rahulpatna89@gmail.com");
-		
-		WebElement messagebox= driver.findElement(By.xpath("//input[@placeholder='Message']"));
-		messagebox.sendKeys("Hi Medicure , Please call me back for medical consultation");
+		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("rahulpatna89@gmail.com");
+
+	        driver.findElement(By.xpath("//input[@placeholder='Message']")).sendKeys("Hi Medicure , Please call me back for medical consultation");
 		
 		driver.findElement(By.className("btn_box")).click();
 		
 		String message = driver.findElement(By.id("message")).getText();
 		if(message.equals("Email sent.")) {
-			System.out.println("Script Executed Successfully");
+			//System.out.println("Script Executed Successfully");
+			TakesScreenshot scrShot = ((TakesScreenshot)driver);
+		        File screenShot = scrShot.getScreenshotAs(OutputType.FILE);
+		        File destFile = new File ("//home/ubuntu//scr.png");
+		        //File destFile = new File ("G:\\chrome-driver\\test-reports\\scr.png"); 
+		        //G:\\chrome-driver\\chromedriver.exe
+		        //File destFile = new File ("//var/lib/jenkins//scr.png");
+		         FileUtils.copyFile(screenShot, destFile); 
+			System.out.println("Screenshot taken Successfully");
 		} else 
 		{
-			System.out.println("Script Failed");
+			//System.out.println("Script Failed");
+			System.out.println("Taking Screenshot gets failed");
 		}
 		
-		TakesScreenshot scrShot = ((TakesScreenshot)driver);
-		File screenShot = scrShot.getScreenshotAs(OutputType.FILE);
-		File destFile = new File ("//home/ubuntu//scr.png");
-		FileUtils.copyFile(screenShot, destFile);
-		
-		Thread.sleep(3000);
-		
+	              /* TakesScreenshot scrShot = ((TakesScreenshot)driver);
+		        File screenShot = scrShot.getScreenshotAs(OutputType.FILE);
+		        File destFile = new File ("//home/ubuntu//scr.png")
+		        //File destFile = new File ("//var/lib/jenkins//scr.png");
+		        ///File destFile = new File ("./scr.png");
+		        FileUtils.copyFile(screenShot, destFile);  */
+		  
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.quit();	
 
 
