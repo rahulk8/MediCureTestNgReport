@@ -31,7 +31,7 @@ public class MediCureTest {
       public static void main(String[] args) throws InterruptedException, IOException {
        WebDriverManager.chromedriver().setup();
        WebDriver driver = new ChromeDriver();
-       driver.manage().window().maximize();
+       //driver.manage().window().maximize();
 
  ChromeOptions chromeOptions = new ChromeOptions();
  chromeOptions.addArguments("--headless");
