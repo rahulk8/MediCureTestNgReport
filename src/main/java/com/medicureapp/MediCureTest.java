@@ -38,7 +38,7 @@ public class MediCureTest {
  chromeOptions.addArguments("--no-sandbox");
  chromeOptions.addArguments("--disable-dev-shm-usage"); 
  
-  driver.get("http://3.109.54.147:8082/contact.html");
+  driver.get("http://3.110.154.1:8082/contact.html");
 
    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
